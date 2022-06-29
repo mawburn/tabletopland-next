@@ -1,5 +1,5 @@
-interface LayoutProps {}
+import { PropsWithChildren } from 'react'
 
-const Layout = ({}: LayoutProps) => <div />
+const Layout = ({ children }: PropsWithChildren) => <div>{children}</div>
 
 export default Layout
