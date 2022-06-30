@@ -6,7 +6,7 @@
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 10px 15px rgba(9, 23, 12, 0.25);
   background-color: rgba(9, 23, 12, 0.25);
-  @apply p-2 rounded-xl max-w-prose text-center text-lightText font-bold absolute top-14 right-14;
+  @apply flex flex-col items-center justify-center p-2 rounded-xl max-w-prose text-lightText font-bold absolute top-1/4 right-14;
 }
 
 .heroText h2 {
@@ -14,5 +14,5 @@
 }
 
 .heroText p {
-  @apply max-w-xl my-3;
+  @apply max-w-xl my-3 text-center;
 }

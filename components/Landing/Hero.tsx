@@ -1,13 +1,14 @@
 import Image from 'next/image'
 
 import { config } from '../../utils/config'
+import LinkButton from '../LinkButton'
 import { heroBlur } from './heroBlur'
 import styles from './styles.module.css'
 
 const Hero = () => (
   <div className={styles.hero}>
     <Image
-      src={`${config.cdn}/images/hero.webp`}
+      src={`${config.cdn}/images/hero-gradient.webp`}
       layout="responsive"
       quality={100}
       width={3840}
@@ -22,6 +23,7 @@ const Hero = () => (
         Tabletop.Land is a marketplace to buy or sell handmade tabletop goodies from people just
         like you!
       </p>
+      <LinkButton href="/collections/all">See our full catalog</LinkButton>
     </div>
   </div>
 )

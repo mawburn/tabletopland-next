@@ -1,0 +1,39 @@
+.footer {
+  @apply flex flex-col pt-6 text-lightText bg-stone-800 text-sm;
+}
+
+.footer h2 {
+  @apply w-full text-lg text-center tracking-wider text-secondary;
+}
+
+.footerInfo {
+  @apply flex items-start justify-between px-4 pb-2 h-full;
+}
+
+.footerInfo section {
+  @apply flex flex-col items-center h-full justify-start;
+}
+
+.socialList {
+  @apply flex gap-4 items-center justify-center text-2xl;
+}
+
+.bottom {
+  @apply flex items-center text-xs justify-between bg-stone-900 text-secondary p-4 mt-2;
+}
+
+.cards {
+  @apply flex gap-2 flex-wrap;
+}
+
+.owners h3 {
+  @apply mt-2 py-3 text-center text-secondary tracking-wide;
+}
+
+.owners img {
+  @apply drop-shadow;
+}
+
+.owners p {
+  margin-top: -0.25rem;
+}
