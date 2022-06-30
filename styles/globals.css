@@ -5,8 +5,16 @@
 @font-face {
   font-family: Coolvetica;
   font-display: swap;
-  src: url('https://cdn.tabletop.land/ttl-assets/fonts/coolvetica.woff') format('woff2'),
+  src: url('https://cdn.tabletop.land/ttl-assets/fonts/coolvetica.woff2') format('woff2'),
     url('https://cdn.tabletop.land/ttl-assets/fonts/coolvetica.woff') format('woff');
+}
+
+html, body, #__next {
+  @apply w-full font-sans;
+}
+
+a, a:any-link {
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,4 +24,3 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   @apply text-3xl;
 }
-

@@ -1,0 +1,37 @@
+.header {
+  @apply flex items-center justify-between px-4 bg-stone-800 border-b border-stone-900 z-10 sticky top-0;
+}
+
+.logo {
+  @apply flex items-center;
+}
+
+.logoText {
+  @apply ml-3 text-xl text-secondary tracking-wider;
+}
+
+.nav {
+  @apply flex h-16;
+}
+
+.navList {
+  @apply flex h-full items-center justify-center text-lightText gap-3;
+}
+
+
+.navList li,
+.navList li a {
+  @apply flex items-center justify-center p-2 h-full;
+}
+
+.right {
+  @apply flex items-center text-xl justify-end text-lightText;
+}
+
+.rightText {
+  @apply text-sm mr-4;
+}
+
+.select {
+  @apply bg-transparent font-mono;
+}
