@@ -2,12 +2,11 @@ import Head from 'next/head'
 
 import { gql } from '@apollo/client'
 
+import HeaderBar from '../components/HeaderBar'
 import Landing from '../components/Landing'
 import client from '../utils/apollo-client'
 
 import type { NextPage } from 'next'
-import HeaderBar from '../components/HeaderBar'
-
 interface HomeProps {
   shop: {
     name: string

@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,7 +11,7 @@ interface HeaderBarProps {
 }
 
 const HeaderBar = ({ large }: HeaderBarProps) => (
-  <header className={clsx(styles.header, { [styles.large]: large })}>
+  <header className={styles.header}>
     <div className={styles.logo}>
       <Link href="/">
         <a>

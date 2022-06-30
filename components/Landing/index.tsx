@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
-import { config } from '../../utils/config'
 
+import { config } from '../../utils/config'
 import Hero from './Hero'
 
 const Layout = ({ children }: PropsWithChildren) => (

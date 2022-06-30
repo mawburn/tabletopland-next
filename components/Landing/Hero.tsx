@@ -1,7 +1,7 @@
 import Image from 'next/image'
+
 import { config } from '../../utils/config'
 import { heroBlur } from './heroBlur'
-
 import styles from './styles.module.css'
 
 const Hero = () => (
@@ -16,6 +16,13 @@ const Hero = () => (
       blurDataURL={heroBlur}
       alt="Tabletop.Land Hero Image"
     />
+    <div className={styles.heroText}>
+      <h2>Buy or sell tabletop terrain &amp; miniatures</h2>
+      <p>
+        Tabletop.Land is a marketplace to buy or sell handmade tabletop goodies from people just
+        like you!
+      </p>
+    </div>
   </div>
 )
 
