@@ -22,7 +22,7 @@ I also wanted to be less tempted by 3rd party products to do the things I needed
 
 ## Then why didn’t you use Hydrogen?
 
-I think [Hydrogen](https://github.com/Shopify/hydrogen) is a work of art, it’s seriously fantastic. But when I built this, Hydrogen was still young & a little heavy handed for what I really needed. For a larger store running it’s core business off Shopify & wanting a more headless experience, it’s perfect. If I had a team of developers, however large, & Tabletop.Land wasn’t a side gig where I could experiment or my wanted my devs to do too much experimentation, I would definitely choose Hydrogen... even as of this writing.
+I think [Hydrogen](https://github.com/Shopify/hydrogen) is a work of art, it’s seriously fantastic. It is just a little heavy handed for what I really need. For a larger store running it’s core business off Shopify & wanting a more headless experience, it’s perfect. If I had a team of developers, however large, & Tabletop.Land wasn’t a side gig where I wasn’t going to experiment or wanted a more solid foundation that is officially supported by Shopify, I would definitely choose Hydrogen.
 
 ## Is this repo meant for other developers or shops to use?
 
