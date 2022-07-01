@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://tabletop.land" target="_new">
+    <img src="https://raw.githubusercontent.com/mawburn/tabletopland-next/main/public/img/logo.png" alt="tabletop.land logo" width="100" height="100" />
+  </a>
+</p>
 
-## Getting Started
+# Tabletop.Land - Headless Site
 
-First, run the development server:
+This is a repo for the headless Shopify vendor marketplace site [Tabletop.Land](https://tabletop.land), where we sell Tabletop Terrain, Miniatures, & accessories. It's built off of [Next.js](https://nextjs.org/), [Apollo](https://www.apollographql.com/), & [TailwindCSS](https://tailwindcss.com). It doesn’t use anything fancy or complicated, for the most part.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The site is a multi-vendor marketplace, so anyone can become a vendor & sell their stuff! It’s owned by my wife & I, so come check it out!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Is this an official Shopify repo?
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Absolutely not. It is a side LLC I own & not at all affiliated with anything Shopify, other than running off Shopify.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Why didn’t you use Liquid?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I did originally, but wanted more control over what I put on the screen, the pages people saw, & the size of the site as a whole.
 
-## Learn More
+I also wanted to be less tempted by 3rd party products to do the things I needed, because I feel like they sometimes over-complicate what I’m looking for.
 
-To learn more about Next.js, take a look at the following resources:
+## Then why didn’t you use Hydrogen?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I think [Hydrogen](https://github.com/Shopify/hydrogen) is a work of art, it’s seriously fantastic. But when I built this, Hydrogen was still young & a little heavy handed for what I really needed. For a larger store running it’s core business off Shopify & wanting a more headless experience, it’s perfect. If I had a team of developers, however large, & Tabletop.Land wasn’t a side gig where I could experiment or my wanted my devs to do too much experimentation, I would definitely choose Hydrogen... even as of this writing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Is this repo meant for other developers or shops to use?
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+No. I just believe in open source & there isn’t anything proprietary that I need to hide. If other developers want to take a look at the code for inspiration or take chunks, then feel free. It is under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
