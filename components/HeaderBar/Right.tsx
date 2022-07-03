@@ -9,8 +9,8 @@ interface RightProps {
 const Right = ({}: RightProps) => (
   <div className={styles.right}>
     <select className={clsx(styles.rightText, styles.select)}>
-      <option value="usd">USD $</option>
-      <option value="cad">CAD $</option>
+      <option value="usd">🇺🇸 USD $</option>
+      <option value="cad">🇨🇦 CAD $</option>
     </select>
     <span className={styles.rightText}>Account</span>
     <span className="icon-cart" />

@@ -2,11 +2,7 @@ import Link from 'next/link'
 
 import styles from './styles.module.css'
 
-interface NavProps {
-  active?: string
-}
-
-const Nav = ({}: NavProps) => (
+const Nav = () => (
   <nav className={styles.nav}>
     <ul className={styles.navList}>
       <li>
@@ -24,14 +20,17 @@ const Nav = ({}: NavProps) => (
       <li>
         <Link href="/collections/minis">Minis</Link>
       </li>
-      <li>
+      <li className={styles.hideMobile}>
         <Link href="/collections/accessories">Accessories</Link>
       </li>
-      <li>
+      <li className={styles.hideMobile}>
         <Link href="/collections/build">
-          <a>
-            Build <span className="sm:not-sr-only sr-only">your own</span>
-          </a>
+          <a>Build your own</a>
+        </Link>
+      </li>
+      <li className={styles.showMobile}>
+        <Link href="/collections/build">
+          <a>Other</a>
         </Link>
       </li>
     </ul>

@@ -11,35 +11,42 @@ interface HeaderBarProps {
 }
 
 const HeaderBar = ({ large }: HeaderBarProps) => (
-  <header className={styles.header}>
-    <div className={styles.logo}>
-      <Link href="/">
-        <a>
-          <Image
-            src={`${config.cdn}/images/logo.png`}
-            width={50}
-            height={50}
-            priority
-            quality={100}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0l4jYBQACuAFrHlRkXwAAAABJRU5ErkJggg=="
-            alt="Tabletop.Land"
-          />
-        </a>
-      </Link>
-      <Link href="/">
-        <a>
-          {large ? (
-            <h1 className={styles.logoText}>Tabletop.Land</h1>
-          ) : (
-            <span className={styles.logoText}>Tabletop.Land</span>
-          )}
-        </a>
-      </Link>
+  <>
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Link href="/">
+          <a>
+            <Image
+              src={`${config.cdn}/images/logo.png`}
+              width={50}
+              height={50}
+              priority
+              quality={100}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0l4jYBQACuAFrHlRkXwAAAABJRU5ErkJggg=="
+              alt="Tabletop.Land"
+            />
+          </a>
+        </Link>
+        <Link href="/">
+          <a>
+            {large ? (
+              <h1 className={styles.logoText}>Tabletop.Land</h1>
+            ) : (
+              <span className={styles.logoText}>Tabletop.Land</span>
+            )}
+          </a>
+        </Link>
+      </div>
+      <div className="sm:flex hidden">
+        <Nav />
+      </div>
+      <Right />
+    </header>
+    <div className="flex sm:hidden">
+      <Nav />
     </div>
-    <Nav />
-    <Right />
-  </header>
+  </>
 )
 
 export default HeaderBar

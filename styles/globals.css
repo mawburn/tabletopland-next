@@ -10,14 +10,19 @@
 }
 
 html, body, #__next {
-  @apply w-full font-sans;
+  @apply flex flex-col w-full font-sans;
 }
 
 a, a:any-link {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-display text-center;
 }
 

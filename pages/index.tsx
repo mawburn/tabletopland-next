@@ -8,6 +8,8 @@ import client from '../utils/apollo-client'
 
 import type { NextPage } from 'next'
 import FooterBar from '../components/FooterBar'
+import { useMediaQuery } from 'usehooks-ts'
+import { config } from '../utils/config'
 interface HomeProps {
   shop: {
     name: string
@@ -17,17 +19,20 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ shop }) => {
+  const mobile = useMediaQuery(config.breakpoint.sm)
+
   return (
-    <div>
+    <>
       <Head>
         <title>{shop.name}</title>
         <meta name="description" content={shop.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderBar large />
+      <HeaderBar large={!mobile} />
       <Landing />
+      <div className="h-32" />
       <FooterBar />
-    </div>
+    </>
   )
 }
 
