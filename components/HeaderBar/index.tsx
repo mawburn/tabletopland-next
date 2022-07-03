@@ -6,11 +6,9 @@ import Nav from './Nav'
 import Right from './Right'
 import styles from './styles.module.css'
 
-interface HeaderBarProps {
-  large: boolean
-}
+//interface HeaderBarProps {}
 
-const HeaderBar = ({ large }: HeaderBarProps) => (
+const HeaderBar = () => (
   <>
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -30,11 +28,7 @@ const HeaderBar = ({ large }: HeaderBarProps) => (
         </Link>
         <Link href="/">
           <a>
-            {large ? (
-              <h1 className={styles.logoText}>Tabletop.Land</h1>
-            ) : (
-              <span className={styles.logoText}>Tabletop.Land</span>
-            )}
+            <h1 className={styles.logoText}>Tabletop.Land</h1>
           </a>
         </Link>
       </div>

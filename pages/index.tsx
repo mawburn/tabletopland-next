@@ -10,6 +10,7 @@ import type { NextPage } from 'next'
 import FooterBar from '../components/FooterBar'
 import { useMediaQuery } from 'usehooks-ts'
 import { config } from '../utils/config'
+import { matchMedia } from '../utils/matchMedia'
 interface HomeProps {
   shop: {
     name: string
@@ -18,23 +19,19 @@ interface HomeProps {
   }
 }
 
-const Home: NextPage<HomeProps> = ({ shop }) => {
-  const mobile = useMediaQuery(config.breakpoint.sm)
-
-  return (
-    <>
-      <Head>
-        <title>{shop.name}</title>
-        <meta name="description" content={shop.description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <HeaderBar large={!mobile} />
-      <Landing />
-      <div className="h-32" />
-      <FooterBar />
-    </>
-  )
-}
+const Home: NextPage<HomeProps> = ({ shop }) => (
+  <>
+    <Head>
+      <title>{shop.name}</title>
+      <meta name="description" content={shop.description} />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <HeaderBar />
+    <Landing />
+    <div className="h-32" />
+    <FooterBar />
+  </>
+)
 
 export async function getStaticProps() {
   const { data } = await client.query({

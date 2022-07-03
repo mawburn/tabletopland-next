@@ -6,14 +6,14 @@
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 10px 15px rgba(9, 23, 12, 0.25);
   background-color: rgba(9, 23, 12, 0.25);
-  @apply flex flex-col items-center justify-center p-2 rounded-xl max-w-prose text-lightText font-bold absolute sm:top-1/4 sm:right-14;
+  @apply flex flex-col items-center justify-center p-2 rounded-xl max-w-prose text-lightText sm:font-bold absolute sm:top-1/4 sm:right-14;
   @apply sm:top-1/4 top-0;
 }
 
 .heroText h2 {
-  @apply sm:text-3xl text-xl font-sans;
+  @apply sm:text-3xl text-lg font-sans font-bold;
 }
 
 .heroText p {
-  @apply max-w-xl my-3 text-center sm:text-base text-sm;
+  @apply max-w-xl my-3 text-center sm:text-base text-sm mb-6;
 }
