@@ -29,3 +29,8 @@ h6 {
 h1 {
   @apply text-3xl;
 }
+
+.text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.5);
+}

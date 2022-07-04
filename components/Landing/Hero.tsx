@@ -15,7 +15,7 @@ const Hero = () => (
       height={2160 - 80}
       placeholder="blur"
       blurDataURL={heroBlur}
-      alt="Tabletop.Land Hero Image"
+      alt="Tabletop.Land"
     />
     <div className={styles.heroText}>
       <h2>Buy or sell tabletop terrain &amp; miniatures</h2>

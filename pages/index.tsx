@@ -1,16 +1,17 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 import { gql } from '@apollo/client'
 
+import Carousel from '../components/Carousel'
+import FooterBar from '../components/FooterBar'
 import HeaderBar from '../components/HeaderBar'
 import Landing from '../components/Landing'
 import client from '../utils/apollo-client'
-
-import type { NextPage } from 'next'
-import FooterBar from '../components/FooterBar'
-import Carousel from '../components/Carosel'
+import { config } from '../utils/config'
 import { getGid } from '../utils/getGid'
 
+import type { NextPage } from 'next'
 interface HomeProps {
   shop: {
     name: string
@@ -28,8 +29,27 @@ const Home: NextPage<HomeProps> = ({ shop, products }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <HeaderBar />
-    <Landing />
-    <Carousel products={products} />
+    <Landing>
+      <section>
+        <Carousel products={products} />
+      </section>
+      <section>
+        <Image
+          src={`${config.cdn}/images/forest.webp`}
+          width={2880}
+          height={1267}
+          alt="forest"
+          layout="responsive"
+          quality={100}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP88PT9DQAJLwOe8a6SigAAAABJRU5ErkJggg=="
+        />
+
+        <h2 className="p-2 text-primary tracking-widest text-center font-bold text-3xl">
+          Sell with us
+        </h2>
+      </section>
+    </Landing>
     <FooterBar />
   </>
 )
@@ -43,7 +63,7 @@ export async function getStaticProps() {
           description
           shipsToCountries
         }
-        collection(handle: "featured") {
+        collectionByHandle(handle: "featured") {
           products(first: 10, sortKey: MANUAL) {
             nodes {
               id
@@ -78,7 +98,7 @@ export async function getStaticProps() {
   })
 
   const { name, shipsToCountries } = data.shop
-  const { nodes } = data.collection.products
+  const { nodes } = data.collectionByHandle.products
 
   return {
     props: {
