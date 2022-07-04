@@ -34,3 +34,7 @@ h1 {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.5);
 }
+
+.card {
+  @apply border border-neutral-900/20 rounded shadow-lg overflow-hidden;
+}
