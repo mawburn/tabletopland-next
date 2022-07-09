@@ -12,11 +12,11 @@ The site is a multi-vendor marketplace, so anyone can become a vendor & sell the
 
 ## Is this an official Shopify repo?
 
-Absolutely not. It is a side LLC I own & not at all affiliated with anything Shopify, other than running off Shopify.
+**Absolutely not.** It is for TabletopLand LLC at [Tabletop.Land](https://tabletop.land), which I personally own & not at all affiliated with anything Shopify, other than the store running off the Shopify platform.
 
 ## Why didn’t you use Liquid?
 
-I did originally, but wanted more control over what I put on the screen, the pages people saw, & the size of the site as a whole.
+I did originally & is currently what is in place, but wanted more control over what I put on the screen, the pages people saw, & the size of the site as a whole.
 
 I also wanted to be less tempted by 3rd party products to do the things I needed, because I feel like they sometimes over-complicate what I’m looking for.
 
