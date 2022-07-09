@@ -5,12 +5,18 @@ import styles from './styles.module.css'
 
 interface LinkButtonProps {
   href: string
+  secondary?: boolean
   className?: string
 }
 
-const LinkButton = ({ children, className = '', href }: PropsWithChildren<LinkButtonProps>) => (
+const LinkButton = ({
+  children,
+  className = '',
+  href,
+  secondary = false,
+}: PropsWithChildren<LinkButtonProps>) => (
   <Link href={href}>
-    <a className={clsx(styles.button, className)}>{children}</a>
+    <a className={clsx(styles.button, { [styles.secondary]: secondary }, className)}>{children}</a>
   </Link>
 )
 

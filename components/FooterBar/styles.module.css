@@ -7,11 +7,11 @@
 }
 
 .footerInfo {
-  @apply flex items-start justify-between px-4 pb-2 h-full;
+  @apply flex sm:flex-row flex-col sm:items-start items-center justify-between px-4 pb-2 h-full;
 }
 
 .footerInfo section {
-  @apply flex flex-col items-center h-full justify-start;
+  @apply flex flex-col sm:mt-0 mt-8 items-center h-full justify-start;
 }
 
 .socialList {

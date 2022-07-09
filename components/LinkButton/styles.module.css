@@ -1,3 +1,8 @@
 .button {
-  @apply flex bg-primary text-lightText border border-neutral-900/50 w-fit rounded sm:p-4 p-2;
+  @apply flex border w-fit rounded sm:p-4 p-2;
+  @apply bg-primary text-lightText border-neutral-900/50;
+}
+
+.secondary {
+  @apply bg-secondary text-textColor font-bold border-neutral-900/50;
 }

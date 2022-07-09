@@ -54,7 +54,25 @@ const Carousel = ({ products }: CarouselProps) => {
 
   return (
     <div className={styles.wrapper}>
-      <h2 className="px-3">Some of our vendors’ products</h2>
+      <h2 className="flex items-center justify-center px-3">
+        <button
+          onClick={movePrev}
+          disabled={isDisabled('prev')}
+          className="disabled:text-textColor/25"
+        >
+          <span className="pr-2 icon-left text-3xl font-bold" />
+          <span className="sr-only">Prev</span>
+        </button>
+        Some of our vendors’ products{' '}
+        <button
+          onClick={moveNext}
+          disabled={isDisabled('next')}
+          className="disabled:text-textColor/25"
+        >
+          <span className="pl-2 icon-right text-3xl font-bold" />
+          <span className="sr-only">Next</span>
+        </button>
+      </h2>
       <div className={styles.carousel}>
         <div className={styles.navButtons}>
           <button onClick={movePrev} disabled={isDisabled('prev')}>

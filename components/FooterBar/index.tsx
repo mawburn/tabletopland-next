@@ -60,7 +60,7 @@ const FooterBar = ({}) => (
           <li className="py-1">Do not sell my personal information</li>
         </ul>
       </section>
-      <section>
+      <section className="sm:mr-4 mr-0">
         <h2 style={{ textAlign: 'left' }}>Contact Us</h2>
         <p>
           <strong>Email:</strong> <a href="mailto:support@tabletop.land">support@tabletop.land</a>

@@ -10,7 +10,7 @@
 }
 
 html, body, #__next {
-  @apply flex flex-col w-full font-sans;
+  @apply flex flex-col w-full font-sans h-full;
 }
 
 a, a:any-link {

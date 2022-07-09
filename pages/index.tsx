@@ -7,6 +7,7 @@ import Carousel from '../components/Carousel'
 import FooterBar from '../components/FooterBar'
 import HeaderBar from '../components/HeaderBar'
 import Landing from '../components/Landing'
+import LinkButton from '../components/LinkButton'
 import client from '../utils/apollo-client'
 import { config } from '../utils/config'
 import { getGid } from '../utils/getGid'
@@ -33,21 +34,35 @@ const Home: NextPage<HomeProps> = ({ shop, products }) => (
       <section>
         <Carousel products={products} />
       </section>
-      <section>
-        <Image
-          src={`${config.cdn}/images/forest.webp`}
-          width={2880}
-          height={1267}
-          alt="forest"
-          layout="responsive"
-          quality={100}
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP88PT9DQAJLwOe8a6SigAAAABJRU5ErkJggg=="
-        />
+      <section className="flex flex-wrap py-4 my-4 drop-shadow-lg	 justify-center items-center bg-stone-800">
+        <div className="sm:w-96 max-w-[90%] w-full">
+          <Image
+            src={`${config.cdn}/images/merchant.webp`}
+            width={500}
+            height={339}
+            alt="Tabletop Merchant"
+            layout="responsive"
+            quality={100}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP88PT9DQAJLwOe8a6SigAAAABJRU5ErkJggg=="
+          />
+        </div>
 
-        <h2 className="p-2 text-primary tracking-widest text-center font-bold text-3xl">
-          Sell with us
-        </h2>
+        <div className="flex flex-col items-center sm:w-fit sm:ml-8 w-full">
+          <h2 className="p-2 text-white tracking-widest text-center font-bold text-3xl">
+            Sell with us
+          </h2>
+          <p className="text-center text-white pb-4">
+            Do you make things?
+            <br />
+            Have too much terrain sitting around?
+            <br />
+            Why not sell it? Better than collecting dust!
+          </p>
+          <LinkButton href="https://sell.tabletop.land" secondary>
+            Become a vendor
+          </LinkButton>
+        </div>
       </section>
     </Landing>
     <FooterBar />
