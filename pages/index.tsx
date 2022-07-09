@@ -28,7 +28,6 @@ const Home: NextPage<HomeProps> = ({ shop, featured, newItems }) => (
   <>
     <Head>
       <title>{shop.name}</title>
-      <meta name="description" content={shop.description} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <HeaderBar />
