@@ -13,16 +13,18 @@ import { config } from '../utils/config'
 import { getGid } from '../utils/getGid'
 
 import type { NextPage } from 'next'
+import Link from 'next/link'
 interface HomeProps {
   shop: {
     name: string
     description: string
     shipsToCountries: string[]
   }
-  products: Product[]
+  featured: Product[]
+  newItems: Product[]
 }
 
-const Home: NextPage<HomeProps> = ({ shop, products }) => (
+const Home: NextPage<HomeProps> = ({ shop, featured, newItems }) => (
   <>
     <Head>
       <title>{shop.name}</title>
@@ -32,9 +34,9 @@ const Home: NextPage<HomeProps> = ({ shop, products }) => (
     <HeaderBar />
     <Landing>
       <section>
-        <Carousel products={products} />
+        <Carousel products={featured} title="Some of our vendors’ products" />
       </section>
-      <section className="flex flex-wrap py-4 my-4 drop-shadow-lg	 justify-center items-center bg-stone-800">
+      <section className="flex flex-wrap py-4 my-4 drop-shadow-lg	justify-center items-center bg-gradient-to-b from-stone-600 to-stone-800">
         <div className="sm:w-96 max-w-[90%] w-full">
           <Image
             src={`${config.cdn}/images/merchant.webp`}
@@ -43,6 +45,7 @@ const Home: NextPage<HomeProps> = ({ shop, products }) => (
             alt="Tabletop Merchant"
             layout="responsive"
             quality={100}
+            loading="lazy"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP88PT9DQAJLwOe8a6SigAAAABJRU5ErkJggg=="
           />
@@ -64,6 +67,50 @@ const Home: NextPage<HomeProps> = ({ shop, products }) => (
           </LinkButton>
         </div>
       </section>
+      <section className="flex flex-col items-center m-4">
+        <article className="max-w-prose">
+          <h2 className="mb-4">Who we are &amp; what we offer</h2>
+          <p className="indent-4">
+            We are a multi-vendor marketplace, much like many other multi-vendor marketplaces on the
+            internet. However, unlike the others we specialize in tabletop gaming supplies &amp;
+            accessories for <strong>tabletop role-playing games</strong> (<strong>ttrpgs</strong>),
+            <strong>wargames</strong>, <strong>skirmish games</strong>, <strong>board games</strong>
+            , &amp; accessories to build your own. Many of our products are handmade, but we also
+            offer other supplies.
+          </p>
+          <p className="mt-2 indent-4">
+            We handle marketing &amp; shipping for vendors in order to make it as easy as possible
+            to get your stuff out the door. We offer a low fixed rate commission of <u>only 10%</u>!{' '}
+            <strong>So that means vendors take 90% of the listing price plus taxes!</strong> On top
+            of that, shipping is not included in the commission &amp; is paid for by the consumer
+            &amp; we send the shipping label directly to the vendor at no charge.
+          </p>
+        </article>
+        <article className="mt-4 max-w-prose">
+          <h2 className="mb-4">What is a multi-vendor marketplace?</h2>
+          <p className="indent-4">
+            To put it simply, it’s products and/or items that are sold by individual vendors. Some
+            of these vendors are just ordinary people clearing their shelves &amp; some are small
+            businesses. If you make stuff &amp; want to join the family,{' '}
+            <u>
+              <Link href="https://seller.tabletop.land">see more information here</Link>
+            </u>
+            .
+          </p>
+        </article>
+      </section>
+      <section>
+        <Carousel products={newItems} title="Newest products" />
+      </section>
+      <div className="py-6 text-center">
+        <Image
+          src="/img/logo-250.png"
+          width={175}
+          height={175}
+          loading="lazy"
+          alt="Tabletop Logo"
+        />
+      </div>
     </Landing>
     <FooterBar />
   </>
@@ -78,8 +125,38 @@ export async function getStaticProps() {
           description
           shipsToCountries
         }
-        collectionByHandle(handle: "featured") {
+        featured: collection(handle: "featured") {
           products(first: 10, sortKey: MANUAL) {
+            nodes {
+              id
+              description
+              seo {
+                description
+                title
+              }
+              title
+              productType
+              tags
+              vendor
+              priceRange {
+                maxVariantPrice {
+                  amount
+                }
+                minVariantPrice {
+                  amount
+                }
+              }
+              featuredImage {
+                altText
+                width
+                height
+                url
+              }
+            }
+          }
+        }
+        newItems: collection(handle: "new") {
+          products(first: 20) {
             nodes {
               id
               description
@@ -113,7 +190,9 @@ export async function getStaticProps() {
   })
 
   const { name, shipsToCountries } = data.shop
-  const { nodes } = data.collectionByHandle.products
+
+  const featured = data.featured.products.nodes
+  const newItems = data.newItems.products.nodes
 
   return {
     props: {
@@ -123,7 +202,27 @@ export async function getStaticProps() {
       },
       // eslint-disable-next-line
       // @ts-expect-error
-      products: nodes.map(p => ({
+      featured: featured.map(p => ({
+        id: getGid(p.id),
+        title: p.title,
+        description: p.description,
+        productType: p.productType,
+        tags: p.tags,
+        vendor: p.vendor,
+        price: {
+          max: p.priceRange.maxVariantPrice.amount,
+          min: p.priceRange.minVariantPrice.amount,
+        },
+        featuredImage: {
+          altText: p.featuredImage.altText,
+          width: p.featuredImage.width,
+          height: p.featuredImage.height,
+          url: p.featuredImage.url,
+        },
+      })),
+      // eslint-disable-next-line
+      // @ts-expect-error
+      newItems: newItems.map(p => ({
         id: getGid(p.id),
         title: p.title,
         description: p.description,

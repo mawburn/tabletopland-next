@@ -4,10 +4,11 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import styles from './styles.module.css'
 
 interface CarouselProps {
+  title: string
   products: Product[]
 }
 
-const Carousel = ({ products }: CarouselProps) => {
+const Carousel = ({ products, title }: CarouselProps) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -63,7 +64,7 @@ const Carousel = ({ products }: CarouselProps) => {
           <span className="pr-2 icon-left text-3xl font-bold" />
           <span className="sr-only">Prev</span>
         </button>
-        Some of our vendors’ products{' '}
+        {title}{' '}
         <button
           onClick={moveNext}
           disabled={isDisabled('next')}
@@ -74,16 +75,6 @@ const Carousel = ({ products }: CarouselProps) => {
         </button>
       </h2>
       <div className={styles.carousel}>
-        <div className={styles.navButtons}>
-          <button onClick={movePrev} disabled={isDisabled('prev')}>
-            <span className="text-stroke icon-left text-3xl font-bold text-secondary" />
-            <span className="sr-only">Prev</span>
-          </button>
-          <button onClick={moveNext} disabled={isDisabled('next')}>
-            <span className="text-stroke icon-right text-3xl font-bold text-secondary" />
-            <span className="sr-only">Next</span>
-          </button>
-        </div>
         <div
           ref={carousel}
           className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
@@ -94,12 +85,7 @@ const Carousel = ({ products }: CarouselProps) => {
                 href="#"
                 className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
               >
-                <Image
-                  layout="fill"
-                  src={p.featuredImage.url}
-                  alt={p.featuredImage.altText}
-                  loading="lazy"
-                />
+                <Image layout="fill" src={p.featuredImage.url} alt={p.title} loading="lazy" />
               </a>
               <a
                 href="#"

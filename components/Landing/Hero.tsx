@@ -9,10 +9,9 @@ const Hero = () => (
   <div className={styles.hero}>
     <Image
       src={`${config.cdn}/images/hero-gradient.webp`}
-      layout="responsive"
+      layout="fill"
       quality={100}
-      width={3840}
-      height={2160 - 80}
+      objectFit="cover"
       placeholder="blur"
       blurDataURL={heroBlur}
       alt="Tabletop.Land"
