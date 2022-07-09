@@ -12,8 +12,7 @@ The site is a multi-vendor marketplace, so anyone can become a vendor & sell the
 
 ## Is this an official Shopify repo?
 
-**Absolutely not.** It is for TabletopLand LLC which I personally own & not at all affiliated with Shopify Inc., Shopify International Ltd., Shopify Commerce Singapore Pte. Ltd.
-, or any other Shopify subsidiary.
+**Absolutely not.** It is for TabletopLand LLC which I personally own & not at all affiliated with Shopify Inc., Shopify International Ltd., Shopify Commerce Singapore Pte. Ltd., or any other Shopify subsidiary.
 
 ## Why didn’t you use Liquid?
 
