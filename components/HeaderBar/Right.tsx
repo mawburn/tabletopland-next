@@ -13,7 +13,7 @@ const Right = ({}: RightProps) => (
       <option value="cad">🇨🇦 CAD $</option>
     </select>
     <span className={styles.rightText}>Account</span>
-    <span className="icon-cart" />
+    <span role="img" aria-label="cart" className="icon-cart" />
   </div>
 )
 

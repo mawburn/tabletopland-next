@@ -61,7 +61,7 @@ const Carousel = ({ products, title }: CarouselProps) => {
           disabled={isDisabled('prev')}
           className="disabled:text-textColor/25"
         >
-          <span className="pr-2 icon-left text-3xl font-bold" />
+          <span role="img" aria-label="left" className="pr-2 icon-left text-3xl font-bold" />
           <span className="sr-only">Prev</span>
         </button>
         {title}{' '}
@@ -70,7 +70,7 @@ const Carousel = ({ products, title }: CarouselProps) => {
           disabled={isDisabled('next')}
           className="disabled:text-textColor/25"
         >
-          <span className="pl-2 icon-right text-3xl font-bold" />
+          <span role="img" aria-label="right" className="pl-2 icon-right text-3xl font-bold" />
           <span className="sr-only">Next</span>
         </button>
       </h2>

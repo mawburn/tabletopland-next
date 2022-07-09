@@ -10,12 +10,12 @@ const FooterBar = ({}) => (
         <ul className={styles.socialList}>
           <li>
             <a href="https://instagram.com/twitter" target="_new">
-              <span className="icon-twitter" aria-label="twitter" />
+              <span role="img" aria-label="twitter" className="icon-twitter" />
             </a>
           </li>
           <li>
             <a href="https://instagram.com/tabletopland" target="_new">
-              <span className="icon-instagram" aria-label="instagram" />
+              <span role="img" aria-label="instagram" className="icon-instagram" />
             </a>
           </li>
           <li>
@@ -25,12 +25,12 @@ const FooterBar = ({}) => (
           </li>
           <li>
             <a href="https://github.com/mawburn/tabletopland-next" target="_new">
-              <span className="icon-github" aria-label="github repo" />
+              <span role="img" aria-label="github" className="icon-github" />
             </a>
           </li>
           <li>
             <a href="https://mawburn.com" target="_new">
-              <span className="icon-tool" aria-label="built by mawburn" />
+              <span role="img" aria-label="built by mawburn" className="icon-tool" />
             </a>
           </li>
         </ul>
