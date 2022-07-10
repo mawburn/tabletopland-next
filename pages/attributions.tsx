@@ -10,6 +10,7 @@ import client from '../utils/apollo-client'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
+import { getTitle } from '../utils/getTitle'
 
 interface AttrProps {
   url: string
@@ -35,7 +36,6 @@ const Attribution = ({ url, name, logo, children }: PropsWithChildren<AttrProps>
 
 interface HomeProps {
   shop: {
-    name: string
     description: string
   }
 }
@@ -43,7 +43,7 @@ interface HomeProps {
 const Attributions: NextPage<HomeProps> = ({ shop }) => (
   <>
     <Head>
-      <title>Attributions - {shop.name}</title>
+      <title>{getTitle('Attributions')}</title>
       <meta name="description" content={shop.description} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
@@ -77,19 +77,17 @@ export async function getStaticProps() {
     query: gql`
       query GetLandingPage {
         shop {
-          name
           description
         }
       }
     `,
   })
 
-  const { name, description } = data.shop
+  const { description } = data.shop
 
   return {
     props: {
       shop: {
-        name,
         description,
       },
     },

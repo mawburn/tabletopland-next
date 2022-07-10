@@ -85,7 +85,12 @@ const Carousel = ({ products, title }: CarouselProps) => {
                 href="#"
                 className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
               >
-                <Image layout="fill" src={p.featuredImage.url} alt={p.title} loading="lazy" />
+                <Image
+                  layout="fill"
+                  src={p.featuredImage?.url || ''}
+                  alt={p.title}
+                  loading="lazy"
+                />
               </a>
               <a
                 href="#"

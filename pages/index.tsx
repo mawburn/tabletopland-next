@@ -14,9 +14,9 @@ import { getGid } from '../utils/getGid'
 
 import type { NextPage } from 'next'
 import Link from 'next/link'
+import { getTitle } from '../utils/getTitle'
 interface HomeProps {
   shop: {
-    name: string
     description: string
     shipsToCountries: string[]
   }
@@ -24,10 +24,10 @@ interface HomeProps {
   newItems: Product[]
 }
 
-const Home: NextPage<HomeProps> = ({ shop, featured, newItems }) => (
+const Home: NextPage<HomeProps> = ({ featured, newItems }) => (
   <>
     <Head>
-      <title>{shop.name}</title>
+      <title>{getTitle()}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <HeaderBar />
@@ -115,12 +115,11 @@ const Home: NextPage<HomeProps> = ({ shop, featured, newItems }) => (
   </>
 )
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
       query GetLandingPage {
         shop {
-          name
           description
           shipsToCountries
         }

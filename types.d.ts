@@ -9,10 +9,17 @@ declare interface Product {
     max: string
     min: string
   }
-  featuredImage: {
-    url: string
+  featuredImage?: {
     altText: string
-    width: number
+    url: string
     height: number
+    width: number
+  }
+  images?: {
+    id: string
+    altText: string
+    url: string
+    height: number
+    width: number
   }
 }
