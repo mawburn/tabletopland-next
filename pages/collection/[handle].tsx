@@ -29,8 +29,8 @@ const Collection: NextPage<CollectionProps> = ({ shop, title, products }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <HeaderBar />
-    <h2>{title}</h2>
-    <section className="flex justify-center items-center">
+    <section className="flex flex-col justify-center items-center">
+      <h2 className="text-3xl py-6">{title}</h2>
       <ul className="productList">
         {products.map(product => (
           <li key={product.id}>
@@ -81,7 +81,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
                   amount
                 }
               }
-              images(first: 2) {
+              images(first: 5) {
                 nodes {
                   id
                   altText
