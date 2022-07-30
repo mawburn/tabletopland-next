@@ -43,3 +43,7 @@ h2 {
 .card {
   @apply border border-neutral-900/20 rounded shadow-lg overflow-hidden;
 }
+
+.productList {
+  @apply flex flex-wrap gap-2 justify-evenly items-center;
+}

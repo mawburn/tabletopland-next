@@ -11,6 +11,7 @@ import client from '../../utils/apollo-client'
 import type { NextPage } from 'next'
 import { getGid } from '../../utils/getGid'
 import { getTitle } from '../../utils/getTitle'
+import ProductListing from '../../components/ProductListing'
 
 interface CollectionProps {
   shop: {
@@ -29,8 +30,14 @@ const Collection: NextPage<CollectionProps> = ({ shop, title, products }) => (
     </Head>
     <HeaderBar />
     <h2>{title}</h2>
-    <section>
-      <pre>{JSON.stringify(products, null, 2)}</pre>
+    <section className="flex justify-center items-center">
+      <ul className="productList">
+        {products.map(product => (
+          <li key={product.id}>
+            <ProductListing product={product} />
+          </li>
+        ))}
+      </ul>
     </section>
     <FooterBar />
   </>

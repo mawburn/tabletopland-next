@@ -15,11 +15,13 @@ declare interface Product {
     height: number
     width: number
   }
-  images?: {
-    id: string
-    altText: string
-    url: string
-    height: number
-    width: number
-  }
+  images?: [
+    {
+      id: string
+      altText: string
+      url: string
+      height: number
+      width: number
+    }
+  ]
 }
