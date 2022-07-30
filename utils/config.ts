@@ -12,7 +12,7 @@ interface Config {
 }
 
 export const config: Config = {
-  cdn: 'https://storage.googleapis.com/ttl-assets',
+  cdn: 'https://cdn.tabletop.media/tabletop.land/',
   shopify: process.env.DOMAIN!,
   token: process.env.TOKEN!,
   breakpoint: {

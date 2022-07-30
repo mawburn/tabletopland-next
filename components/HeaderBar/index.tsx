@@ -15,7 +15,7 @@ const HeaderBar = () => (
         <Link href="/">
           <a>
             <Image
-              src={`${config.cdn}/images/logo.png`}
+              src={`${config.cdn}/logo.png`}
               width={50}
               height={50}
               priority

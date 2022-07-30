@@ -38,11 +38,11 @@ const FooterBar = ({}) => (
           <h3>Mom &amp; Pop Owned</h3>
           <div className="flex gap-3 justify-center items-center">
             <a href="https://instagram.com/viertastable">
-              <Image src={`${config.cdn}/images/Vierta.webp`} alt="Vierta" width={80} height={80} />
+              <Image src={`${config.cdn}/Vierta.webp`} alt="Vierta" width={80} height={80} />
               <p className="w-full text-center font-bold">Vierta</p>
             </a>
             <a href="https://instagram.com/_mawburn">
-              <Image src={`${config.cdn}/images/Matt.webp`} alt="Matt" width={80} height={80} />
+              <Image src={`${config.cdn}/Matt.webp`} alt="Matt" width={80} height={80} />
               <p className="w-full text-center font-bold">Matt</p>
             </a>
           </div>

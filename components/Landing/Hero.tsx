@@ -8,7 +8,7 @@ import styles from './styles.module.css'
 const Hero = () => (
   <div className={styles.hero}>
     <Image
-      src={`${config.cdn}/images/hero-gradient.webp`}
+      src={`${config.cdn}/hero-gradient.webp`}
       layout="fill"
       quality={100}
       objectFit="cover"

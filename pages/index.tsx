@@ -38,7 +38,7 @@ const Home: NextPage<HomeProps> = ({ featured, newItems }) => (
       <section className="flex flex-wrap py-4 my-4 drop-shadow-lg	justify-center items-center bg-gradient-to-b from-stone-600 to-stone-800">
         <div className="sm:w-96 max-w-[90%] w-full">
           <Image
-            src={`${config.cdn}/images/merchant.webp`}
+            src={`${config.cdn}/merchant.webp`}
             width={500}
             height={339}
             alt="Tabletop Merchant"
@@ -120,7 +120,6 @@ export async function getServerSideProps() {
     query: gql`
       query GetLandingPage {
         shop {
-          description
           shipsToCountries
         }
         featured: collection(handle: "featured") {
@@ -187,7 +186,7 @@ export async function getServerSideProps() {
     `,
   })
 
-  const { name, shipsToCountries } = data.shop
+  const { shipsToCountries } = data.shop
 
   const featured = data.featured.products.nodes
   const newItems = data.newItems.products.nodes
@@ -195,7 +194,6 @@ export async function getServerSideProps() {
   return {
     props: {
       shop: {
-        name,
         shipsToCountries,
       },
       // eslint-disable-next-line
