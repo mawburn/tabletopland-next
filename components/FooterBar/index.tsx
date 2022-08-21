@@ -53,12 +53,8 @@ const FooterBar = ({}) => (
           Quick Links
         </h2>
         <ul className="w-full text-xs">
-          <li className="py-1">
-            <a href="https://sell.tabletop.land">Become a vendor</a>
-          </li>
           <li className="py-1">Refund Policy</li>
           <li className="py-1">Privacy Policy</li>
-          <li className="py-1">Terms of Service</li>
           <li className="py-1">Do not sell my personal information</li>
         </ul>
       </section>

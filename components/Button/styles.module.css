@@ -1,3 +1,12 @@
 .button {
   @appply bg-white border rounded-lg;
 }
+
+.linkButton {
+  @apply flex border w-fit rounded sm:p-4 p-2;
+  @apply bg-primary text-lightText border-neutral-900/50;
+}
+
+.linkSecondary {
+  @apply bg-secondary text-textColor font-bold border-neutral-900/50;
+}

@@ -17,7 +17,13 @@ export const Collection = ({ products }: CollectonProps) => {
         <li key={p.id}>
           <h3>{p.title.split('-')[0].trim()}</h3>
           <div className={styles.img}>
-            <Image src={p.featuredImage.url} layout="fill" objectFit="contain" alt={p.title} />
+            <Image
+              src={p.featuredImage.url}
+              layout="fill"
+              objectFit="contain"
+              alt={p.title}
+              loading="lazy"
+            />
           </div>
           <div className="text-center px-2 overflow-clip">
             <span className="font-semibold text-sm">Price:</span>{' '}

@@ -5,8 +5,8 @@ import styles from './styles.module.css'
 
 interface LinkButtonProps {
   href: string
-  secondary?: boolean
-  className?: string
+  secondary: boolean
+  className: string
 }
 
 const LinkButton = ({
