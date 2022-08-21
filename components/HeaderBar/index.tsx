@@ -6,9 +6,11 @@ import { config } from '../../utils/config'
 import Right from './Right'
 import styles from './styles.module.css'
 
-//interface HeaderBarProps {}
+interface HeaderBarProps {
+  checkoutUrl: string
+}
 
-const HeaderBar = () => (
+const HeaderBar = ({ checkoutUrl }: HeaderBarProps) => (
   <header className={styles.header}>
     <div className={styles.logo}>
       <Link href="/">
@@ -31,7 +33,7 @@ const HeaderBar = () => (
         </a>
       </Link>
     </div>
-    <Right />
+    <Right checkoutUrl={checkoutUrl} />
   </header>
 )
 

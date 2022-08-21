@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Cookies from 'cookies'
 
 import { gql } from '@apollo/client'
 
@@ -13,20 +14,23 @@ import { getTitle } from '../utils/getTitle'
 import { getPrice } from '../utils/getPrice'
 import { Collection } from '../components/Collection'
 
+import { IncomingMessage, ServerResponse } from 'http'
+
 interface HomeProps {
   shop: {
     shipsToCountries: string[]
   }
+  checkoutUrl: string
   products: Product[]
 }
 
-const Home: NextPage<HomeProps> = ({ products }) => (
+const Home: NextPage<HomeProps> = ({ checkoutUrl, products }) => (
   <>
     <Head>
       <title>{getTitle()}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <HeaderBar />
+    <HeaderBar checkoutUrl={checkoutUrl} />
     <main className="h-fit">
       <Collection products={products} />
     </main>
@@ -34,12 +38,54 @@ const Home: NextPage<HomeProps> = ({ products }) => (
   </>
 )
 
-export async function getServerSideProps() {
+export async function getServerSideProps({
+  req,
+  res,
+}: {
+  req: IncomingMessage
+  res: ServerResponse
+}) {
+  const cookies = new Cookies(req, res)
+  let cartId = cookies.get('cartId')
+
+  if (!cartId) {
+    const { data } = await client.mutate({
+      mutation: gql`
+        mutation CreateCart {
+          cartCreate {
+            cart {
+              id
+            }
+          }
+        }
+      `,
+    })
+
+    cartId = data.cartCreate.cart.id
+    cookies.set('cartId', cartId, {
+      path: '/',
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+    })
+  }
+
   const { data } = await client.query({
     query: gql`
       query GetLandingPage {
         shop {
           shipsToCountries
+        }
+        cart(id: "${cartId}") {
+          checkoutUrl
+          createdAt
+          updatedAt
+          # totalQuantity
+          # cost {
+          #   totalAmount {
+          #     amount
+          #   }
+          # }
         }
         collection(handle: "all") {
           products(first: 250, sortKey: MANUAL) {
@@ -78,6 +124,7 @@ export async function getServerSideProps() {
       shop: {
         shipsToCountries,
       },
+      checkoutUrl: data.cart.checkoutUrl,
       // eslint-disable-next-line
       // @ts-expect-error
       products: products.map(p => ({
