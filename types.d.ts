@@ -4,24 +4,25 @@ declare interface Product {
   description: string
   productType: string
   tags: string[]
-  vendor: string
+  vendor?: string
+  seo: {
+    description: string
+  }
   price: {
     max: string
     min: string
   }
-  featuredImage?: {
-    altText: string
+  featuredImage: {
     url: string
-    height: number
-    width: number
+    height?: number
+    width?: number
   }
   images?: [
     {
       id: string
-      altText: string
       url: string
-      height: number
-      width: number
+      height?: number
+      width?: number
     }
   ]
 }

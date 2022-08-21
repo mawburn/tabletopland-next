@@ -5,11 +5,11 @@
 @font-face {
   font-family: Coolvetica;
   font-display: swap;
-  src: url('https://storage.googleapis.com/ttl-assets/fonts/coolvetica.woff2') format('woff2'),
-    url('https://storage.googleapis.com/ttl-assets/fonts/coolvetica.woff') format('woff');
+  src: url('https://cdn.tabletop.media/fonts/coolvetica.woff2') format('woff2'),
+    url('https://cdn.tabletop.media/fonts/coolvetica.woff') format('woff');
 }
 
-html, body, #__next {
+html, body, #__next, main {
   @apply flex flex-col w-full font-sans h-full;
 }
 
@@ -32,6 +32,10 @@ h1 {
 
 h2 {
   @apply text-2xl;
+}
+
+h3 {
+  @apply tracking-widest;
 }
 
 

@@ -1,5 +1,6 @@
 .header {
-  @apply flex items-center flex-wrap justify-between w-full bg-stone-800 border-b border-stone-900 z-10 sm:sticky sm:top-0 text-lightText pl-0 sm:px-4 p-0;
+  @apply flex items-center flex-wrap justify-between w-full bg-stone-800 border-b border-stone-900 z-10 text-lightText px-0 py-2;
+  @apply sm:sticky sm:top-0 sm:px-4;
 }
 
 .logo {

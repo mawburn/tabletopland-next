@@ -1,0 +1,17 @@
+.collection {
+  @apply flex flex-wrap bg-white gap-2 justify-center px-0 my-2;
+  @apply sm:gap-4;
+}
+
+.collection li {
+  @apply flex flex-col items-center border border-gray-300 rounded-lg shadow-lg;
+  @apply w-72 h-[410px];
+}
+
+.collection li h3 {
+  @apply font-bold;
+}
+
+.img {
+  @apply relative w-72 h-72 border-y border-gray-300 p-0 m-0;
+}
