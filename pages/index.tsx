@@ -80,12 +80,12 @@ export async function getServerSideProps({
           checkoutUrl
           createdAt
           updatedAt
-          # totalQuantity
-          # cost {
-          #   totalAmount {
-          #     amount
-          #   }
-          # }
+          totalQuantity
+          cost {
+            totalAmount {
+              amount
+            }
+          }
         }
         collection(handle: "all") {
           products(first: 250, sortKey: MANUAL) {
