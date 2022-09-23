@@ -65,7 +65,7 @@ export async function getServerSideProps({
     cookies.set('cartId', cartId, {
       path: '/',
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      //  secure: process.env.NODE_ENV === 'production',
     })
   }
 
