@@ -1,0 +1,48 @@
+{% assign new_website = 'https://tabletopland-next.vercel.app/' %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="{{new_website}}" crossorigin>
+    <script>
+      const discount_code = getCookie('discount_code')
+
+      function getCookie(name) {
+        name = name + '='
+        const decodedCookie = decodeURIComponent(document.cookie)
+        const cookies = decodedCookie.split(';')
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim()
+          if (cookie.indexOf(name) === 0) {
+            return cookie.substring(name.length, cookie.length)
+          }
+        }
+      }
+
+      let url = window.location
+
+      const baseUrl = url.protocol + '//' + url.host + '/' + url.pathname.split('/')[0]
+
+      const newUrl = '{{new_website}}'
+
+      url = url.toString()
+
+      url = url.replace(baseUrl, newUrl)
+      if (url.includes('?') && discount_code) {
+        url = url + '&discount=' + discount_code
+      } else if (discount_code) {
+        url = url + '?discount=' + discount_code
+      }
+
+      window.location.replace(url)
+    </script>
+    <!-- {{content_for_header}} -->
+  </head>
+
+  <body>
+	{{content_for_layout}}
+  </body>
+</html>
