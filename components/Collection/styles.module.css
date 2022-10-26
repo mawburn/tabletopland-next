@@ -4,12 +4,12 @@
 }
 
 .collection li {
-  @apply flex flex-col items-center border border-gray-300 rounded-lg overflow-hidden;
+  @apply flex flex-col items-center border border-gray-300 rounded-lg overflow-hidden shadow-md;
   @apply w-72 h-[410px];
 }
 
 .collection li h3 {
-  @apply font-bold;
+  @apply font-bold text-xl;
 }
 
 .img {
