@@ -24,14 +24,10 @@ const Nav = () => (
         <Link href="/collection/accessories">Accessories</Link>
       </li>
       <li className={styles.hideMobile}>
-        <Link href="/collection/build">
-          <a>Build your own</a>
-        </Link>
+        <Link href="/collection/build">Build your own</Link>
       </li>
       <li className={styles.showMobile}>
-        <Link href="/collection/build">
-          <a>Other</a>
-        </Link>
+        <Link href="/collection/build">Other</Link>
       </li>
     </ul>
   </nav>

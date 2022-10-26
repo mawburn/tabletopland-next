@@ -15,8 +15,8 @@ const LinkButton = ({
   href,
   secondary = false,
 }: PropsWithChildren<LinkButtonProps>) => (
-  <Link href={href}>
-    <a className={clsx(styles.button, { [styles.secondary]: secondary }, className)}>{children}</a>
+  <Link href={href} className={clsx(styles.button, { [styles.secondary]: secondary }, className)}>
+    {children}
   </Link>
 )
 
