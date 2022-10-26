@@ -4,7 +4,7 @@
 }
 
 .collection li {
-  @apply flex flex-col items-center border border-gray-300 rounded-lg shadow-lg;
+  @apply flex flex-col items-center border border-gray-300 rounded-lg overflow-hidden;
   @apply w-72 h-[410px];
 }
 
@@ -13,5 +13,5 @@
 }
 
 .img {
-  @apply relative w-72 h-72 border-y border-gray-300 p-0 m-0;
+  @apply border-gray-300 p-0 m-0;
 }

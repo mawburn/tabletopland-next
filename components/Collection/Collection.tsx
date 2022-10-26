@@ -11,17 +11,11 @@ export const Collection = ({ products }: CollectionProps) => (
   <ul className={styles.collection}>
     {products.map(p => (
       <li key={p.id} title={p.description}>
-        <h3>{p.title.split('-')[0].trim()}</h3>
         <div className={styles.img}>
-          <Image
-            src={p.featuredImage.url}
-            layout="fill"
-            objectFit="contain"
-            alt={p.title}
-            loading="lazy"
-          />
+          <Image src={p.featuredImage.url} width={300} height={300} alt={p.title} loading="lazy" />
         </div>
         <div className="text-center px-2 overflow-clip">
+          <h3>{p.title.split('-')[0].trim()}</h3>
           <span className="font-semibold text-sm">Price:</span>{' '}
           <span className="text-sm">{p.price.min}</span>
           {p.price.max.toLowerCase() !== 'free' ? (
