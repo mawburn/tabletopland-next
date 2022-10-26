@@ -16,7 +16,7 @@
     "date-fns": "^2.28.0",
     "dotenv": "^16.0.1",
     "graphql": "^16.5.0",
-    "next": "12.2.0",
+    "next": "13.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "use-debounce": "^8.0.3",
@@ -25,18 +25,19 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
     "@types/cookies": "^0.7.7",
-    "@types/node": "18.0.0",
-    "@types/react": "18.0.14",
-    "@types/react-dom": "18.0.5",
+    "@types/node": "18.11.5",
+    "@types/react": "18.0.23",
+    "@types/react-dom": "18.0.7",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.37.0",
     "autoprefixer": "^10.4.7",
-    "eslint": "8.18.0",
-    "eslint-config-next": "12.2.0",
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.1.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.4",
-    "typescript": "4.7.4"
+    "typescript": "4.8.4"
   }
 }
